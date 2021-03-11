@@ -99,17 +99,17 @@ dependencies {
 
 
 
-<img src="https://github.com/jousen/jpicker/blob/main/img/竖屏模式.mp4_20210312_071918.672.png" alt="竖屏模式.mp4_20210312_071918.672" style="zoom: 25%;" />
+<img src="https://github.com/jousen/jpicker/blob/main/img/%E7%AB%96%E5%B1%8F%E6%A8%A1%E5%BC%8F.mp4_20210312_071918.672.jpg" alt="竖屏模式.mp4_20210312_071918.672" style="zoom: 25%;" />
 
-<img src="https://github.com/jousen/jpicker/blob/main/img/竖屏模式.mp4_20210312_071945.035.png" alt="竖屏模式.mp4_20210312_071945.035" style="zoom: 25%;" />
+<img src="https://github.com/jousen/jpicker/blob/main/img/%E7%AB%96%E5%B1%8F%E6%A8%A1%E5%BC%8F.mp4_20210312_071945.035.jpg" alt="竖屏模式.mp4_20210312_071945.035" style="zoom: 25%;" />
 
-<img src="https://github.com/jousen/jdialog/blob/main/img/竖屏模式.mp4_20210312_071957.844.png" alt="竖屏模式.mp4_20210312_071957.844" style="zoom: 25%;" />
+<img src="https://github.com/jousen/jpicker/blob/main/img/%E7%AB%96%E5%B1%8F%E6%A8%A1%E5%BC%8F.mp4_20210312_071957.844.jpg" alt="竖屏模式.mp4_20210312_071957.844" style="zoom: 25%;" />
 
 ## Project use libraries
 
 [https://github.com/mumuy/data_location](https://github.com/nuclearfog/LinkAndScrollMovement)
 
-https://github.com/gyf-dev/ImmersionBar
+[https://github.com/gyf-dev/ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
 
 Thanks
 
