@@ -18,6 +18,8 @@
 
 **build.gradle**
 
+[![](https://jitpack.io/v/jousen/jpicker.svg)](https://jitpack.io/#jousen/jpicker)
+
 ```
 allprojects {
     repositories {
