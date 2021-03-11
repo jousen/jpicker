@@ -1,0 +1,3 @@
+include ':jpicker'
+include ':app'
+rootProject.name = "JPicker"

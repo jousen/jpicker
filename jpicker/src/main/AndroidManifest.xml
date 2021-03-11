@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jousen.plugin.jpicker">
+
+    <application>
+
+        <activity
+            android:name=".CityPickerActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <activity
+            android:name=".DatePickerMonthActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <activity
+            android:name=".DatePickerDayActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <activity
+            android:name=".DatePickerTimeActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <activity
+            android:name=".DatePickerRangeActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" /> <!-- 适配华为（huawei）刘海屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- 适配小米（xiaomi）刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+    </application>
+
+</manifest>
