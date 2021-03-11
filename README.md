@@ -107,7 +107,7 @@ dependencies {
 
 ## Project use libraries
 
-[https://github.com/mumuy/data_location](https://github.com/nuclearfog/LinkAndScrollMovement)
+[https://github.com/mumuy/data_location](https://github.com/mumuy/data_location)
 
 [https://github.com/gyf-dev/ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
 
