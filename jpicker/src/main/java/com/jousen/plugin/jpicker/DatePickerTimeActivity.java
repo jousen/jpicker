@@ -109,9 +109,9 @@ public class DatePickerTimeActivity extends AppCompatActivity {
             minute.enableSound();
             second.enableSound();
         }
-        year.setData(DateFactory.getSimpleYearData(pickOption.wheelYearStart, pickOption.wheelYearEnd));
-        month.setData(DateFactory.getSimpleMonthData());
-        day.setData(DateFactory.getSimpleDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
+        year.setData(DateFactory.getYearData(pickOption.wheelYearStart, pickOption.wheelYearEnd));
+        month.setData(DateFactory.getMonthData());
+        day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
         hour.setData(DateFactory.getHourData());
         minute.setData(DateFactory.getMinuteData());
         second.setData(DateFactory.getSecondData());
@@ -125,13 +125,13 @@ public class DatePickerTimeActivity extends AppCompatActivity {
 
         year.setOnSelectListener((position, data) -> {
             choiceYear = position + pickOption.wheelYearStart;
+            day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
             setDateText();
-            day.setData(DateFactory.getSimpleDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
         });
         month.setOnSelectListener((position, data) -> {
             choiceMonth = position + 1;
+            day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
             setDateText();
-            day.setData(DateFactory.getSimpleDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
         });
         day.setOnSelectListener((position, data) -> {
             choiceDay = position + 1;

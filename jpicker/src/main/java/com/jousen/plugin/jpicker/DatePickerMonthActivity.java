@@ -80,8 +80,10 @@ public class DatePickerMonthActivity extends AppCompatActivity {
     private void initWheel() {
         year.setTextSize(18);
         year.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        year.setSelectSuffix("年");
         month.setTextSize(18);
         month.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        month.setSelectSuffix("月");
         if (pickOption.enableSound) {
             year.enableSound();
             month.enableSound();

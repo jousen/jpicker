@@ -71,11 +71,19 @@ public class DatePickerRangeActivity extends AppCompatActivity {
             pickType = 0;
             date_picker_text_start.setBackgroundResource(R.drawable.jpicker_card_border);
             date_picker_text_end.setBackgroundResource(R.drawable.jpicker_card_normal);
+
+            year.initPosition(choiceYearStart - pickOption.wheelYearStart);
+            month.initPosition(choiceMonthStart - 1);
+            day.initPosition(choiceDayStart - 1);
         });
         findViewById(R.id.date_picker_text_end).setOnClickListener(v -> {
             pickType = 1;
             date_picker_text_start.setBackgroundResource(R.drawable.jpicker_card_normal);
             date_picker_text_end.setBackgroundResource(R.drawable.jpicker_card_border);
+
+            year.initPosition(choiceYearEnd - pickOption.wheelYearStart);
+            month.initPosition(choiceMonthEnd - 1);
+            day.initPosition(choiceDayEnd - 1);
         });
         findViewById(R.id.date_picker_confirm).setOnClickListener(v -> {
             if (choiceYearStart == 0 || choiceMonthStart == 0 || choiceDayStart == 0) {
@@ -108,10 +116,13 @@ public class DatePickerRangeActivity extends AppCompatActivity {
     private void initWheel() {
         year.setTextSize(18);
         year.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        year.setSelectSuffix("年");
         month.setTextSize(18);
         month.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        month.setSelectSuffix("月");
         day.setTextSize(18);
         day.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        day.setSelectSuffix("日");
         if (pickOption.enableSound) {
             year.enableSound();
             month.enableSound();
@@ -128,24 +139,24 @@ public class DatePickerRangeActivity extends AppCompatActivity {
         year.setOnSelectListener((position, data) -> {
             if (pickType == 0) {
                 choiceYearStart = position + pickOption.wheelYearStart;
-                setDateText();
                 day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYearStart, choiceMonthStart)));
+                setDateText();
                 return;
             }
             choiceYearEnd = position + pickOption.wheelYearStart;
-            setDateText();
             day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYearEnd, choiceMonthEnd)));
+            setDateText();
         });
         month.setOnSelectListener((position, data) -> {
             if (pickType == 0) {
                 choiceMonthStart = position + 1;
-                setDateText();
                 day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYearStart, choiceMonthStart)));
+                setDateText();
                 return;
             }
             choiceMonthEnd = position + 1;
-            setDateText();
             day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYearEnd, choiceMonthEnd)));
+            setDateText();
         });
         day.setOnSelectListener((position, data) -> {
             if (pickType == 0) {

@@ -7,44 +7,12 @@ public class DateFactory {
     public static List<String> getYearData(int startYear, int endYear) {
         List<String> yearData = new ArrayList<>();
         for (int i1 = startYear; i1 <= endYear; i1++) {
-            yearData.add(i1 + "年");
-        }
-        return yearData;
-    }
-
-    public static List<String> getMonthData() {
-        List<String> monthData = new ArrayList<>();
-        for (int i2 = 1; i2 <= 12; i2++) {
-            if (i2 < 10) {
-                monthData.add("0" + i2 + "月");
-            } else {
-                monthData.add(i2 + "月");
-            }
-        }
-        return monthData;
-    }
-
-    public static List<String> getDayData(int maxDayOfMonth) {
-        List<String> dayData = new ArrayList<>();
-        for (int i3 = 1; i3 <= maxDayOfMonth; i3++) {
-            if (i3 < 10) {
-                dayData.add("0" + i3 + "日");
-            } else {
-                dayData.add(i3 + "日");
-            }
-        }
-        return dayData;
-    }
-
-    public static List<String> getSimpleYearData(int startYear, int endYear) {
-        List<String> yearData = new ArrayList<>();
-        for (int i1 = startYear; i1 <= endYear; i1++) {
             yearData.add(i1 + "");
         }
         return yearData;
     }
 
-    public static List<String> getSimpleMonthData() {
+    public static List<String> getMonthData() {
         List<String> monthData = new ArrayList<>();
         for (int i2 = 1; i2 <= 12; i2++) {
             if (i2 < 10) {
@@ -56,7 +24,7 @@ public class DateFactory {
         return monthData;
     }
 
-    public static List<String> getSimpleDayData(int maxDayOfMonth) {
+    public static List<String> getDayData(int maxDayOfMonth) {
         List<String> dayData = new ArrayList<>();
         for (int i3 = 1; i3 <= maxDayOfMonth; i3++) {
             if (i3 < 10) {

@@ -79,10 +79,13 @@ public class DatePickerDayActivity extends AppCompatActivity {
     private void initWheel() {
         year.setTextSize(18);
         year.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        year.setSelectSuffix("年");
         month.setTextSize(18);
         month.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        month.setSelectSuffix("月");
         day.setTextSize(18);
         day.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
+        day.setSelectSuffix("日");
         if (pickOption.enableSound) {
             year.enableSound();
             month.enableSound();
@@ -98,13 +101,13 @@ public class DatePickerDayActivity extends AppCompatActivity {
 
         year.setOnSelectListener((position, data) -> {
             choiceYear = position + pickOption.wheelYearStart;
-            setDateText();
             day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
+            setDateText();
         });
         month.setOnSelectListener((position, data) -> {
             choiceMonth = position + 1;
-            setDateText();
             day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
+            setDateText();
         });
         day.setOnSelectListener((position, data) -> {
             choiceDay = position + 1;
