@@ -9,10 +9,11 @@
     <string name="picker_choice_area">选择区/县</string>
     <string name="picker_choice_special">直辖市/自治区</string>
     <!--选择日期-->
+    <string name="date_picker_type">选择方式</string>
     <string name="date_picker_type_month">选择月份</string>
     <string name="date_picker_type_day">选择日期</string>
+    <string name="date_picker_type_range">选择范围</string>
     <string name="date_picker_type_time">选择时间</string>
-    <string name="date_picker_type_range">选择日期区间</string>
     <string name="picker_choice_start">开始日期</string>
     <string name="picker_choice_end">结束日期</string>
     <string name="date_choice_error">日期选择未完成~</string>

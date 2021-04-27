@@ -143,6 +143,7 @@ public class CityPickerActivity extends AppCompatActivity {
 
     private void pickComplete() {
         Intent intent = new Intent();
+        intent.putExtra("code", selectProvince.p + selectProvince.c + selectProvince.a);
         intent.putExtra("province", selectProvince.t);
         intent.putExtra("city", selectCity.t);
         intent.putExtra("area", selectArea.t);

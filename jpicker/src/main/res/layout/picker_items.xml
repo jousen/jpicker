@@ -13,6 +13,5 @@
         android:padding="10dp"
         android:textColor="@color/picker_text"
         android:textSize="14sp"
-        app:drawableEndCompat="@drawable/jpicker_action"
-        app:drawableTint="@color/picker_text" />
+        app:drawableEndCompat="@drawable/jpicker_action" />
 </FrameLayout>

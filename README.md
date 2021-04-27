@@ -36,7 +36,7 @@ dependencies {
 	//用于实现沉浸式状态栏  Used to implement immersive status bar
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
 
-    implementation 'com.github.jousen:jpicker:2.2'
+    implementation 'com.github.jousen:jpicker:2.3'
 }
 ```
 
@@ -117,7 +117,7 @@ Thanks
 
 
 
-# Licenses
+## Licenses
 
 ```
 Copyright 2021 jousen

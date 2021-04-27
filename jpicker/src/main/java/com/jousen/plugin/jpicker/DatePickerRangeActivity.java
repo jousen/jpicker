@@ -67,6 +67,12 @@ public class DatePickerRangeActivity extends AppCompatActivity {
         setDateText();
 
         findViewById(R.id.date_picker_back).setOnClickListener(v -> finish());
+        findViewById(R.id.date_picker_switch).setOnClickListener(v -> {
+            Intent intent = new Intent(this, DatePickTypeActivity.class);
+            intent.putExtra("option", pickOption);
+            startActivity(intent);
+            finish();
+        });
         findViewById(R.id.date_picker_text_start).setOnClickListener(v -> {
             pickType = 0;
             date_picker_text_start.setBackgroundResource(R.drawable.jpicker_card_border);

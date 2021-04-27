@@ -21,11 +21,10 @@
     <ImageButton
         android:id="@+id/city_picker_back"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:contentDescription="@string/picker_back"
         android:padding="10dp"
-        android:tint="@color/picker_text"
         app:layout_constraintBottom_toBottomOf="@+id/city_picker_title"
         app:layout_constraintLeft_toLeftOf="@+id/city_picker_title"
         app:layout_constraintTop_toTopOf="@+id/city_picker_title"
@@ -44,7 +43,6 @@
         android:textColor="@color/picker_text"
         android:textSize="14sp"
         app:drawableEndCompat="@drawable/jpicker_action"
-        app:drawableTint="@color/picker_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/city_picker_title" />
@@ -60,7 +58,6 @@
         android:textColor="@color/picker_text"
         android:textSize="14sp"
         app:drawableEndCompat="@drawable/jpicker_action"
-        app:drawableTint="@color/picker_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/city_picker_province" />
@@ -76,7 +73,6 @@
         android:textColor="@color/picker_text"
         android:textSize="14sp"
         app:drawableEndCompat="@drawable/jpicker_action"
-        app:drawableTint="@color/picker_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/city_picker_city" />

@@ -21,15 +21,26 @@
     <ImageButton
         android:id="@+id/date_picker_back"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:contentDescription="@string/picker_back"
         android:padding="10dp"
-        android:tint="@color/picker_text"
         app:layout_constraintBottom_toBottomOf="@+id/date_picker_title"
         app:layout_constraintLeft_toLeftOf="@+id/date_picker_title"
         app:layout_constraintTop_toTopOf="@+id/date_picker_title"
         app:srcCompat="@drawable/jpicker_back" />
+
+    <ImageButton
+        android:id="@+id/date_picker_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/picker_back"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/date_picker_title"
+        app:layout_constraintRight_toRightOf="@+id/date_picker_title"
+        app:layout_constraintTop_toTopOf="@+id/date_picker_title"
+        app:srcCompat="@drawable/jpicker_switch" />
 
     <TextView
         android:id="@+id/date_picker_text"
@@ -105,6 +116,5 @@
         android:text="@string/picker_confirm"
         android:textColor="@android:color/white"
         android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
