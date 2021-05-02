@@ -58,12 +58,6 @@ public class DatePickerDayActivity extends AppCompatActivity {
         setDateText();
 
         findViewById(R.id.date_picker_back).setOnClickListener(v -> finish());
-        findViewById(R.id.date_picker_switch).setOnClickListener(v -> {
-            Intent intent = new Intent(this, DatePickTypeActivity.class);
-            intent.putExtra("option", pickOption);
-            startActivity(intent);
-            finish();
-        });
         findViewById(R.id.date_picker_confirm).setOnClickListener(v -> {
             if (choiceYear == 0 || choiceMonth == 0 || choiceDay == 0) {
                 Toast.makeText(this, R.string.date_choice_error, Toast.LENGTH_SHORT).show();
