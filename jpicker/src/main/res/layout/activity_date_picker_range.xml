@@ -30,18 +30,6 @@
         app:layout_constraintTop_toTopOf="@+id/date_picker_title"
         app:srcCompat="@drawable/jpicker_back" />
 
-    <ImageButton
-        android:id="@+id/date_picker_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/picker_back"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/date_picker_title"
-        app:layout_constraintRight_toRightOf="@+id/date_picker_title"
-        app:layout_constraintTop_toTopOf="@+id/date_picker_title"
-        app:srcCompat="@drawable/jpicker_switch" />
-
     <TextView
         android:id="@+id/date_picker_text_start_tip"
         android:layout_width="match_parent"

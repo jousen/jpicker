@@ -9,7 +9,6 @@
     <string name="picker_choice_area">选择区/县</string>
     <string name="picker_choice_special">直辖市/自治区</string>
     <!--选择日期-->
-    <string name="date_picker_type">选择方式</string>
     <string name="date_picker_type_month">选择月份</string>
     <string name="date_picker_type_day">选择日期</string>
     <string name="date_picker_type_range">选择范围</string>

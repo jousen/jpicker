@@ -28,11 +28,6 @@
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".DatePickTypeActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
 
         <meta-data
             android:name="android.max_aspect"
