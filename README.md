@@ -33,10 +33,7 @@ allprojects {
 
 ```
 dependencies {
-	//用于实现沉浸式状态栏  Used to implement immersive status bar
-    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
-
-    implementation 'com.github.jousen:jpicker:2.6'
+    implementation 'com.github.jousen:jpicker:2.7'
 }
 ```
 
@@ -55,7 +52,6 @@ dependencies {
                 new DatePicker(this)
                         .setPickType(DatePicker.PICK_MONTH)
                         .setInitDate(new Date())
-                        .setEnableSound()
                         .show());
         //日期选择
         findViewById(R.id.day_pick).setOnClickListener(v ->
@@ -64,21 +60,18 @@ dependencies {
                         .setInitYear(2021)
                         .setInitMonth(1)
                         .setInitDay(1)
-                        .setEnableSound()
                         .show());
         //月份选择
         findViewById(R.id.time_pick).setOnClickListener(v ->
                 new DatePicker(this)
                         .setPickType(DatePicker.PICK_TIME)
                         .setInitDate(new Date())
-                        .setEnableSound()
                         .show());
         //区间选择
         findViewById(R.id.range_pick).setOnClickListener(v ->
                 new DatePicker(this)
                         .setPickType(DatePicker.PICK_RANGE)
                         .setInitDate(new Date())
-                        .setEnableSound()
                         .show());
 ```
 

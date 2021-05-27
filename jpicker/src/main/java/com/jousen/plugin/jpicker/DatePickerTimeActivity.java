@@ -101,14 +101,7 @@ public class DatePickerTimeActivity extends AppCompatActivity {
         minute.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
         second.setTextSize(14);
         second.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
-        if (pickOption.enableSound) {
-            year.enableSound();
-            month.enableSound();
-            day.enableSound();
-            hour.enableSound();
-            minute.enableSound();
-            second.enableSound();
-        }
+
         year.setData(DateFactory.getYearData(pickOption.wheelYearStart, pickOption.wheelYearEnd));
         month.setData(DateFactory.getMonthData());
         day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));

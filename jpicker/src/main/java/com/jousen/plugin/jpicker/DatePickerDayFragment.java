@@ -1,55 +1,62 @@
 package com.jousen.plugin.jpicker;
 
-import android.content.Intent;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-import com.gyf.immersionbar.ImmersionBar;
-import com.jousen.plugin.jpicker.model.JPicker;
 import com.jousen.plugin.jpicker.model.PickerDateOption;
 import com.jousen.plugin.jpicker.tool.DateFactory;
+import com.jousen.plugin.jpicker.tool.DatePickResultListener;
 import com.jousen.plugin.jpicker.tool.JTool;
 import com.jousen.plugin.jwheel.WheelView;
 
 import java.util.Calendar;
 
-public class DatePickerDayActivity extends AppCompatActivity {
+public class DatePickerDayFragment extends Fragment {
+    private final PickerDateOption pickOption;
+    private final DatePickResultListener datePickResultListener;
+    private Context context;
     private TextView date_picker_text;
     private WheelView year;
     private WheelView month;
     private WheelView day;
-
-    private PickerDateOption pickOption;
     private Calendar calendar;
     private int choiceYear;
     private int choiceMonth;
     private int choiceDay;
 
+    public DatePickerDayFragment(PickerDateOption pickOption, DatePickResultListener datePickResultListener) {
+        this.pickOption = pickOption;
+        this.datePickResultListener = datePickResultListener;
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_date_picker_day);
-        bindView();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_date_pick_day, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        bindView(view);
         initWheel();
     }
 
-    private void bindView() {
-        //沉浸式状态栏
-        ImmersionBar.with(this).statusBarColor(R.color.picker_background).statusBarDarkFont(JTool.isDayMode(this)).fitsSystemWindows(true).init();
-        //获取参数
-        pickOption = (PickerDateOption) getIntent().getSerializableExtra("option");
-        if (pickOption == null) {
-            pickOption = new PickerDateOption();
-        }
+    private void bindView(View view) {
         //初始化视图
-        date_picker_text = findViewById(R.id.date_picker_text);
-        year = findViewById(R.id.year);
-        month = findViewById(R.id.month);
-        day = findViewById(R.id.day);
+        date_picker_text = view.findViewById(R.id.date_picker_text);
+        year = view.findViewById(R.id.year);
+        month = view.findViewById(R.id.month);
+        day = view.findViewById(R.id.day);
 
         calendar = Calendar.getInstance();
         choiceYear = (pickOption.initYear >= 0 ? pickOption.initYear : calendar.get(Calendar.YEAR));
@@ -57,22 +64,16 @@ public class DatePickerDayActivity extends AppCompatActivity {
         choiceDay = (pickOption.initDay >= 0 ? pickOption.initDay : calendar.get(Calendar.DAY_OF_MONTH));
         setDateText();
 
-        findViewById(R.id.date_picker_back).setOnClickListener(v -> finish());
-        findViewById(R.id.date_picker_confirm).setOnClickListener(v -> {
+        view.findViewById(R.id.date_picker_confirm).setOnClickListener(v -> {
             if (choiceYear == 0 || choiceMonth == 0 || choiceDay == 0) {
-                Toast.makeText(this, R.string.date_choice_error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, R.string.date_choice_error, Toast.LENGTH_SHORT).show();
                 return;
             }
             String pickText = choiceYear + "-" + JTool.formatNum(choiceMonth) + "-" + JTool.formatNum(choiceDay);
             String pickStart = pickText + " 00:00:00";
             String pickEnd = pickText + " 23:59:59";
-
-            Intent intent = new Intent();
-            intent.putExtra("date_text", pickText);
-            intent.putExtra("date_start", pickStart);
-            intent.putExtra("date_end", pickEnd);
-            setResult(JPicker.PICKER_DATE, intent);
-            finish();
+            //返回结果
+            datePickResultListener.pickResult(pickText, pickStart, pickEnd);
         });
     }
 
@@ -86,11 +87,6 @@ public class DatePickerDayActivity extends AppCompatActivity {
         day.setTextSize(18);
         day.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
         day.setSelectSuffix("日");
-        if (pickOption.enableSound) {
-            year.enableSound();
-            month.enableSound();
-            day.enableSound();
-        }
         year.setData(DateFactory.getYearData(pickOption.wheelYearStart, pickOption.wheelYearEnd));
         month.setData(DateFactory.getMonthData());
         day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
@@ -118,5 +114,11 @@ public class DatePickerDayActivity extends AppCompatActivity {
     private void setDateText() {
         String text = choiceYear + "-" + JTool.formatNum(choiceMonth) + "-" + JTool.formatNum(choiceDay);
         date_picker_text.setText(text);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 }

@@ -9,22 +9,12 @@
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".DatePickerMonthActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".DatePickerDayActivity"
+            android:name=".DatePickerActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".DatePickerTimeActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".DatePickerRangeActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
@@ -39,5 +29,4 @@
             android:name="notch.config"
             android:value="portrait|landscape" />
     </application>
-
 </manifest>

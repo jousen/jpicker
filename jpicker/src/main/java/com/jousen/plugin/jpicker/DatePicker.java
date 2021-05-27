@@ -20,7 +20,6 @@ public class DatePicker {
     private PickerDateOption option;
 
     private DatePicker() {
-
     }
 
     public DatePicker(Activity activity) {
@@ -71,48 +70,22 @@ public class DatePicker {
         return this;
     }
 
-    public DatePicker setInitHour(int initHour) {
-        this.option.initHour = initHour;
-        return this;
-    }
-
-    public DatePicker setInitMinute(int initMinute) {
-        this.option.initMinute = initMinute;
-        return this;
-    }
-
-    public DatePicker setInitSecond(int initSecond) {
-        this.option.initSecond = initSecond;
-        return this;
-    }
-
-    public DatePicker setEnableSound() {
-        this.option.enableSound = true;
-        return this;
-    }
-
     public void show() {
-        switch (this.option.pickType) {
-            case PICK_DAY:
-                Intent intent1 = new Intent(activity, DatePickerDayActivity.class);
-                intent1.putExtra("option", this.option);
-                activity.startActivityForResult(intent1, JPicker.PICKER_DATE);
-                break;
-            case PICK_TIME:
-                Intent intent2 = new Intent(activity, DatePickerTimeActivity.class);
-                intent2.putExtra("option", this.option);
-                activity.startActivityForResult(intent2, JPicker.PICKER_DATE);
-                break;
-            case PICK_RANGE:
-                Intent intent3 = new Intent(activity, DatePickerRangeActivity.class);
-                intent3.putExtra("option", this.option);
-                activity.startActivityForResult(intent3, JPicker.PICKER_DATE);
-                break;
-            default:
-                Intent intent = new Intent(activity, DatePickerMonthActivity.class);
-                intent.putExtra("option", this.option);
-                activity.startActivityForResult(intent, JPicker.PICKER_DATE);
-                break;
+        //时间选择单独跳转
+        if (this.option.pickType == PICK_TIME) {
+            Intent intentTime = new Intent(activity, DatePickerTimeActivity.class);
+            intentTime.putExtra("option", this.option);
+            activity.startActivityForResult(intentTime, JPicker.PICKER_DATE);
+            return;
         }
+        //日期选择组件
+        Intent intent = new Intent(activity, DatePickerActivity.class);
+        intent.putExtra("option", this.option);
+        activity.startActivityForResult(intent, JPicker.PICKER_DATE);
+    }
+
+    @Deprecated
+    public DatePicker setEnableSound() {
+        return this;
     }
 }
