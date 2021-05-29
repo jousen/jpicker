@@ -81,7 +81,7 @@ public class DatePickerActivity extends AppCompatActivity implements DatePickRes
                 return tabArray.length;
             }
         });
-        new TabLayoutMediator(tabLayout, date_picker_view, (tab, position) -> tab.setText(tabArray[position])).attach();
+        new TabLayoutMediator(tabLayout, date_picker_view, true, false, (tab, position) -> tab.setText(tabArray[position])).attach();
         //初始视图
         if (pickOption.pickType == DatePicker.PICK_DAY) {
             date_picker_view.setCurrentItem(1, false);
