@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jousen.plugin.jpicker">
+
+    <application>
+        <activity
+            android:name=".CityPickerActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".DatePickerActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".DatePickerTimeActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|fontScale|uiMode"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+    </application>
+</manifest>

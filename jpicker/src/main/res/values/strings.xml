@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="picker_title">选择</string>
+    <string name="picker_back">返回</string>
+    <string name="picker_confirm">选择完成</string>
+    <!--选择城市-->
+    <string name="picker_choice_province">选择省份/地区</string>
+    <string name="picker_choice_city">选择城市</string>
+    <string name="picker_choice_area">选择区/县</string>
+    <string name="picker_choice_special">直辖市/自治区</string>
+    <!--选择日期-->
+    <string name="date_picker_type_month">选择月份</string>
+    <string name="date_picker_type_day">选择日期</string>
+    <string name="date_picker_type_range">选择范围</string>
+    <string name="date_picker_type_time">选择时间</string>
+    <string name="picker_choice_start">开始日期</string>
+    <string name="picker_choice_end">结束日期</string>
+    <string name="date_choice_error">日期选择未完成~</string>
+    <string name="date_choice_range_error">开始日期不能大于结束日期</string>
+    <string name="tip_orientation_change">切换横竖屏后，需要重新打开时间选择器</string>
+</resources>

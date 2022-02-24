@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/picker_background"
+    tools:context=".DatePickerTimeActivity">
+
+    <TextView
+        android:id="@+id/date_picker_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/date_picker_type_time"
+        android:textColor="@color/picker_text"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/date_picker_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/picker_back"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/date_picker_title"
+        app:layout_constraintLeft_toLeftOf="@+id/date_picker_title"
+        app:layout_constraintTop_toTopOf="@+id/date_picker_title"
+        app:srcCompat="@drawable/jpicker_back" />
+
+    <TextView
+        android:id="@+id/date_picker_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/jpicker_card_border"
+        android:gravity="center"
+        android:minHeight="35dp"
+        android:padding="10dp"
+        android:textColor="@color/picker_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_title" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/date_picker_wheel"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/jpicker_card_normal"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/date_picker_confirm"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_text">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/jpicker_wheel_center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/month" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/month"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toRightOf="@+id/year"
+            app:layout_constraintRight_toLeftOf="@+id/day" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/day"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toRightOf="@+id/month"
+            app:layout_constraintRight_toLeftOf="@+id/hour" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/hour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toRightOf="@+id/day"
+            app:layout_constraintRight_toLeftOf="@+id/minute" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/minute"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toRightOf="@+id/hour"
+            app:layout_constraintRight_toLeftOf="@+id/second" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintLeft_toRightOf="@+id/minute"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/date_picker_confirm"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/jpicker_button_primary"
+        android:gravity="center"
+        android:text="@string/picker_confirm"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

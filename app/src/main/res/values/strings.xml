@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JPicker</string>
+    <string name="city_pick">城市选择</string>
+    <string name="month_pick">月份选择</string>
+    <string name="day_pick">日期选择</string>
+    <string name="time_pick">时间选择</string>
+    <string name="range_pick">区间选择</string>
+    <string name="switch_theme">切换主题</string>
+</resources>

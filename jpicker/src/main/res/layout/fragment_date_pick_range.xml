@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/picker_background">
+
+    <TextView
+        android:id="@+id/date_picker_text_start_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="5dp"
+        android:text="@string/picker_choice_start"
+        android:textColor="@color/picker_text"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date_picker_text_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/jpicker_card_border"
+        android:gravity="center"
+        android:minHeight="35dp"
+        android:padding="10dp"
+        android:textColor="@color/picker_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_text_start_tip" />
+
+    <TextView
+        android:id="@+id/date_picker_text_end_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="5dp"
+        android:text="@string/picker_choice_end"
+        android:textColor="@color/picker_text"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_text_start" />
+
+    <TextView
+        android:id="@+id/date_picker_text_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/jpicker_card_normal"
+        android:gravity="center"
+        android:minHeight="35dp"
+        android:padding="10dp"
+        android:textColor="@color/picker_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_text_end_tip" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/date_picker_wheel"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/jpicker_card_normal"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/date_picker_confirm"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_text_end">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/jpicker_wheel_center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/month" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/month"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/year"
+            app:layout_constraintRight_toLeftOf="@+id/day" />
+
+        <com.jousen.plugin.jwheel.WheelView
+            android:id="@+id/day"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/month"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/date_picker_confirm"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/jpicker_button_primary"
+        android:gravity="center"
+        android:text="@string/picker_confirm"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
