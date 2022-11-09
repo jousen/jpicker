@@ -4,11 +4,11 @@
 
 **Android city and date picker easy use.** 
 
-<img src="https://github.com/jousen/jpicker/blob/main/img/1.png"/>
+<img src="./img/1.png" width="400"/>
 
-<img src="https://github.com/jousen/jpicker/blob/main/img/2.png"/>
+<img src="./img/2.png" width="400"/>
 
-<img src="https://github.com/jousen/jpicker/blob/main/img/3.png"/>
+<img src="./img/3.png" width="400"/>
 
 ------
 
@@ -42,7 +42,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.jousen:jpicker:4.7'
+    implementation 'com.github.jousen:jpicker:4.8'
 }
 ```
 
@@ -113,7 +113,7 @@ dependencies {
 
 [https://github.com/gyf-dev/ImmersionBar](https://github.com/gyf-dev/ImmersionBar)
 
-[https://github.com/youzan/vant/tree/dev/packages/vant-area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data)
+[https://github.com/youzan/vant/tree/main/packages/vant-area-data](https://github.com/youzan/vant/tree/main/packages/vant-area-data)
 
 Thanks
 
