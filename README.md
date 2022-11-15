@@ -42,7 +42,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.jousen:jpicker:4.8'
+    implementation 'com.github.jousen:jpicker:4.9'
 }
 ```
 

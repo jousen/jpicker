@@ -70,9 +70,8 @@ public class MainActivity extends AppCompatActivity {
         });
         //日期选择
         findViewById(R.id.day_pick).setOnClickListener(v -> {
-            Intent intent = new DatePicker(this).setPickType(DatePicker.PICK_DAY).setInitYear(2021)
-                    .setInitMonth(1)
-                    .setInitDay(1).build();
+            Intent intent = new DatePicker(this).setPickType(DatePicker.PICK_DAY)
+                    .setInitYear(2022).setInitMonth(11).setInitDay(12).build();
             dateLauncher.launch(intent);
         });
         //月份选择
