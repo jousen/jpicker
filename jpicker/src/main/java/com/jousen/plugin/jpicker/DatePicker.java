@@ -46,7 +46,6 @@ public class DatePicker {
         this.option.initDay = calendar.get(Calendar.DAY_OF_MONTH);
         this.option.initHour = calendar.get(Calendar.HOUR_OF_DAY);
         this.option.initMinute = calendar.get(Calendar.MINUTE);
-        this.option.initSecond = calendar.get(Calendar.SECOND);
         return this;
     }
 

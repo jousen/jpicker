@@ -15,7 +15,6 @@ public class PickerDateOption implements Serializable {
     public int initDay;
     public int initHour;
     public int initMinute;
-    public int initSecond;
 
     public PickerDateOption() {
         Calendar calendar = Calendar.getInstance();
@@ -24,6 +23,5 @@ public class PickerDateOption implements Serializable {
         this.initDay = calendar.get(Calendar.DAY_OF_MONTH);
         this.initHour = calendar.get(Calendar.HOUR_OF_DAY);
         this.initMinute = calendar.get(Calendar.MINUTE);
-        this.initSecond = calendar.get(Calendar.SECOND);
     }
 }

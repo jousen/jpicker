@@ -59,16 +59,4 @@ public class DateFactory {
         }
         return minuteData;
     }
-
-    public static List<String> getSecondData() {
-        List<String> secondData = new ArrayList<>();
-        for (int i6 = 0; i6 <= 59; i6++) {
-            if (i6 < 10) {
-                secondData.add("0" + i6);
-            } else {
-                secondData.add(String.valueOf(i6));
-            }
-        }
-        return secondData;
-    }
 }

@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 49
-        versionName "4.9"
+        versionCode 50
+        versionName "5.0"
 
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -31,13 +31,13 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
-    implementation 'com.google.code.gson:gson:2.10'
-    implementation 'com.github.jousen:jwheel:4.3'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.github.jousen:jwheel:4.4'
     implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
 }
 

@@ -24,7 +24,6 @@ public class DatePickerTimeActivity extends AppCompatActivity {
     private WheelView day;
     private WheelView hour;
     private WheelView minute;
-    private WheelView second;
 
     private PickerDateOption pickOption;
     private Calendar calendar;
@@ -33,7 +32,6 @@ public class DatePickerTimeActivity extends AppCompatActivity {
     private int choiceDay;
     private int choiceHour;
     private int choiceMinute;
-    private int choiceSecond;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +56,6 @@ public class DatePickerTimeActivity extends AppCompatActivity {
         day = findViewById(R.id.day);
         hour = findViewById(R.id.hour);
         minute = findViewById(R.id.minute);
-        second = findViewById(R.id.second);
 
         calendar = Calendar.getInstance();
         choiceYear = (pickOption.initYear >= 0 ? pickOption.initYear : calendar.get(Calendar.YEAR));
@@ -66,7 +63,6 @@ public class DatePickerTimeActivity extends AppCompatActivity {
         choiceDay = (pickOption.initDay >= 0 ? pickOption.initDay : calendar.get(Calendar.DAY_OF_MONTH));
         choiceHour = (pickOption.initHour >= 0 ? pickOption.initHour : calendar.get(Calendar.HOUR_OF_DAY));
         choiceMinute = (pickOption.initMinute >= 0 ? pickOption.initMinute : calendar.get(Calendar.MINUTE));
-        choiceSecond = (pickOption.initSecond >= 0 ? pickOption.initSecond : calendar.get(Calendar.SECOND));
         setDateText();
 
         findViewById(R.id.date_picker_back).setOnClickListener(v -> finish());
@@ -76,7 +72,7 @@ public class DatePickerTimeActivity extends AppCompatActivity {
                 return;
             }
             String pickText = choiceYear + "-" + JTool.formatNum(choiceMonth) + "-" + JTool.formatNum(choiceDay)
-                    + " " + JTool.formatNum(choiceHour) + ":" + JTool.formatNum(choiceMinute) + ":" + JTool.formatNum(choiceSecond);
+                    + " " + JTool.formatNum(choiceHour) + ":" + JTool.formatNum(choiceMinute) + ":00";
             String pickEnd = choiceYear + "-" + JTool.formatNum(choiceMonth) + "-" + JTool.formatNum(choiceDay) + " 23:59:59";
 
             Intent intent = new Intent();
@@ -99,22 +95,18 @@ public class DatePickerTimeActivity extends AppCompatActivity {
         hour.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
         minute.setTextSize(14);
         minute.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
-        second.setTextSize(14);
-        second.setTextColor(getResources().getColor(R.color.picker_text), Color.LTGRAY);
 
         year.setData(DateFactory.getYearData(pickOption.wheelYearStart, pickOption.wheelYearEnd));
         month.setData(DateFactory.getMonthData());
         day.setData(DateFactory.getDayData(JTool.getMaxDay(calendar, choiceYear, choiceMonth)));
         hour.setData(DateFactory.getHourData());
         minute.setData(DateFactory.getMinuteData());
-        second.setData(DateFactory.getSecondData());
 
         year.initPosition(choiceYear - pickOption.wheelYearStart);
         month.initPosition(choiceMonth - 1);
         day.initPosition(choiceDay - 1);
         hour.initPosition(choiceHour);
         minute.initPosition(choiceMinute);
-        second.initPosition(choiceSecond);
 
         year.setOnSelectListener((position, data) -> {
             choiceYear = position + pickOption.wheelYearStart;
@@ -138,15 +130,11 @@ public class DatePickerTimeActivity extends AppCompatActivity {
             choiceMinute = position;
             setDateText();
         });
-        second.setOnSelectListener((position, data) -> {
-            choiceSecond = position;
-            setDateText();
-        });
     }
 
     private void setDateText() {
         String text = choiceYear + "-" + JTool.formatNum(choiceMonth) + "-" + JTool.formatNum(choiceDay)
-                + " " + JTool.formatNum(choiceHour) + ":" + JTool.formatNum(choiceMinute) + ":" + JTool.formatNum(choiceSecond);
+                + " " + JTool.formatNum(choiceHour) + ":" + JTool.formatNum(choiceMinute) + ":00";
         date_picker_text.setText(text);
     }
 }

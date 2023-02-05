@@ -98,17 +98,8 @@
             android:clipToPadding="false"
             app:layout_constraintHorizontal_weight="2"
             app:layout_constraintLeft_toRightOf="@+id/hour"
-            app:layout_constraintRight_toLeftOf="@+id/second" />
-
-        <com.jousen.plugin.jwheel.WheelView
-            android:id="@+id/second"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:clipToPadding="false"
-            app:layout_constraintHorizontal_weight="2"
-            app:layout_constraintLeft_toRightOf="@+id/minute"
             app:layout_constraintRight_toRightOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView

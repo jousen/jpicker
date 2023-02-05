@@ -39,22 +39,22 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/time_pick"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_margin="10dp"
-        android:background="@color/purple_200"
-        android:text="@string/time_pick"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
-
-    <Button
         android:id="@+id/range_pick"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_margin="10dp"
         android:background="@color/purple_200"
         android:text="@string/range_pick"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/time_pick"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:background="@color/purple_200"
+        android:text="@string/time_pick"
         android:textColor="@color/white"
         android:textSize="14sp" />
 

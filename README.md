@@ -4,12 +4,6 @@
 
 **Android city and date picker easy use.** 
 
-<img src="./img/1.png" width="400"/>
-
-<img src="./img/2.png" width="400"/>
-
-<img src="./img/3.png" width="400"/>
-
 ------
 
 ## 1、特性 Feature 
@@ -42,9 +36,14 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.jousen:jpicker:4.9'
+    implementation 'com.github.jousen:jpicker:5.0'
 }
 ```
+<img src="./img/1.png" width="400"/>
+
+<img src="./img/2.png" width="400"/>
+
+<img src="./img/3.png" width="400"/>
 
 ## 3、使用 Usage
 
