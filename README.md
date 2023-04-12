@@ -36,7 +36,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.jousen:jpicker:5.0'
+    implementation 'com.github.jousen:jpicker:5.1'
 }
 ```
 <img src="./img/1.png" width="400"/>
